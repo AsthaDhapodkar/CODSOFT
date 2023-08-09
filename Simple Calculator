@@ -1,0 +1,42 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double a, b, sum, diff, pro, quo;
+    char c;
+    
+    cout<<"Enter the mathematical operation to be performed(+,-,*,/):"<<endl;
+    cin>>c;
+    
+    cout<<"Enter the two numbers:"<<endl;
+    cin>>a>>b;
+    
+    switch(c)
+    {
+        case'+':
+        sum = a + b;
+        cout << "Sum is: " << sum<<endl;
+        break;
+        
+        case'-':
+        diff = a - b;
+        cout << "Difference is: " << diff<<endl;
+        break;
+        
+        case'*':
+        pro = a * b;
+        cout << "Product is: " << pro<<endl;
+        break;
+        
+        if(b!=0)
+        {
+            case'/':
+            quo = a / b;
+            cout << "Quotient is: " << quo<<endl;
+            break;
+        }
+        
+        return 0;
+    }
+}
