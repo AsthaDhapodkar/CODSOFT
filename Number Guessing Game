@@ -1,0 +1,58 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	int a, b, i, n = 8;
+	cout << "Enter a number between 0 to 100 to be guessed:" << endl;
+	cin >> a;
+	cout << "Rules:" << endl;
+	cout << "If the number is not within the range of 30 it will tell" << endl << "you whether it is too low or too high." << endl;
+	cout << endl;
+	cout << "Remember you have only 8 chances!!" << endl;
+
+	if (a <= 100 && a >= 0)
+	//We have set the limit from 0 to 100 for the number to be guessed.
+	{
+		for (i = 1; i <= n; ++i)
+		{
+			cout << "Enter the number:\t";
+			cin >> b;
+
+			if (a == b)
+			{
+				cout << "You guessed the correct number." << endl;
+				break;
+			}
+			else
+			{
+				if (b > a + 30 && b <= 100)
+				{
+					cout << "The number you guessed is too high." << endl;
+				}
+				else if (b >= a + 1 && b <= a + 30)
+				{
+					cout << "The number you guessed is high." << endl;
+				}
+				else if (b <= a - 30 && b >= 0)
+				{
+					cout << "The number you guessed is too low." << endl;
+				}
+				else if (b <= a - 1 && b > a - 30)
+				{
+					cout << "The number you guessed is low." << endl;
+				}
+				else
+				{
+					cout << "You are going on wrong path." << endl;
+				}
+			}
+		}
+
+		if (i > n)
+			cout << "You have used all your chances. The correct number is\t" << a << "." << endl;
+		else
+			cout << "The number is not valid!!" << endl;
+	}
+}
